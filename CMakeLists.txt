@@ -29,7 +29,6 @@ if(IDF_TARGET STREQUAL "esp32")
 target_link_libraries(${COMPONENT_TARGET} "-Wl,--start-group"
     wakenet
     dl_lib
-    c_speech_features
     hilexin_wn3
     hilexin_wn4
     hilexin_wn5
@@ -49,7 +48,8 @@ target_link_libraries(${COMPONENT_TARGET} "-Wl,--start-group"
     esp_tts_chinese 
     voice_set_xiaole 
     voice_set_template
-    esp_audio_processor "-Wl,--end-group")
+    esp_audio_processor
+    c_speech_features "-Wl,--end-group")
 endif()
 
 if(IDF_TARGET STREQUAL "esp32s2")
